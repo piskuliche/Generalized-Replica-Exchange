@@ -8,7 +8,8 @@ HOMEPATH=$(PWD)
 grem: fortran/grem_sort.f90 fortran/grem_analyze.f90
 	@echo "Beginning gREM build"
 	@echo ${HOMEPATH}
-	rm -p bin/
+	mkdir -p bin/
+	touch bin/test
 	rm bin/*
 	$(FC) $(FCFLAGS) -o bin/grem_sort.exe fortran/grem_sort.f90
 	$(FC) $(FCFLAGS) -o bin/grem_analyze.exe fortran/grem_analyze.f90
