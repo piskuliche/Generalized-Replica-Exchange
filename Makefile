@@ -4,6 +4,7 @@ FC = pgfortran
 #Flags
 FCFLAGS = -O3
 HOMEPATH=$(PWD)
+MODDIR=$(HOMEPATH)/../privatemodules
 
 grem: fortran/grem_sort.f90 fortran/grem_analyze.f90
 	@echo "Beginning gREM build"
@@ -22,6 +23,10 @@ grem: fortran/grem_sort.f90 fortran/grem_analyze.f90
 	ln -s $(HOMEPATH)/python/set_analysis.py  bin/
 	ln -s $(HOMEPATH)/python/sortdumps.py bin/
 	chmod 777 bin/*
+	cp module/grem.lua $(MODDIR)/grem.lua
+
+clean: 
+	rm *.mod
 
 
 
