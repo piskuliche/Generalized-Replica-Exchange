@@ -15,7 +15,7 @@ Things that are assumed:
 
 
 
-##Setup Stage
+## Setup Stage
 
 To setup a GREM simulation, you need to use the setup option of the GREM code.
 
@@ -35,7 +35,7 @@ Lambdas (and their spacing) is selected by evenly distributing nbins between sta
 
 
 
-##Walkdown Stage
+## Walkdown Stage
 
 The next step is to run a “walkdown” where you run enthalpies in order from lowest lambda to highest lambda and launch each successive lambda from the previous lambda. This makes sure that you are equilibrating from the lowest state.
 
@@ -58,12 +58,12 @@ Walkdown 1 turns on the walkdown step.
 Once you run this, all you have to do is submit the submission script as qsub walkdown.sh - if all is well every trajectory will run successfully. You are now ready to start actual gREM.
 
 
-##Run GREM using LAMMPS
+## Run GREM using LAMMPS
 
 From this point, the next step is to run actual gREM using lammps with existing scripts.
 
 
-##Analyze GREM Runs
+## Analyze GREM Runs
 
 To do this, all you have to do is run without setting the walkdown or setup options. It is suggested you make a directory elsewhere and use the workdir to point to the right path as this step generates tons of files.
 
@@ -73,7 +73,7 @@ Nbins determines the number of histogram bins for use with ST-WHAM
 
 When you rerun the analysis code after running once with restart 0, and flip it to restart 1, it then will read the restart files, do ST-WHAM, and any other final analysis as needed.
 
-##Example:
+## Example:
 
 run_gREM.py -start 1 -stop 6 -eta -0.1 -Ho -19600 -workdir .. -nbins 50 -nb 5 -restart 0
 run_gREM.py -start 1 -stop 6 -eta -0.1 -Ho -19600 -workdir .. -nbins 50 -nb 5 -restart 1
