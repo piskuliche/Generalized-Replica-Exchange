@@ -1,0 +1,5 @@
+python/*.pyc
+fortran/*.o
+fortran/*.mod
+fortran/*.exe
+bin/
